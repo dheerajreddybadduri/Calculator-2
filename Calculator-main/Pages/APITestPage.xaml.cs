@@ -59,5 +59,30 @@ public partial class APITestPage : ContentPage
         }
     }
 
-    
+    private async void onOptionClicked(object sender, EventArgs e)
+    {
+        Button button = (Button)sender;
+        var tempColor = button.BackgroundColor;
+        string buttonValue = button.Text;
+        //renderResults(correctOptionValue);
+        await Task.Delay(1000);
+        if (buttonValue == correctOptionValue)
+        {
+            await DisplayAlert("Correct", buttonValue + " is the Correct Answer", "Next Question");
+            optionOneBtn.BackgroundColor = tempColor;
+            optionTwoBtn.BackgroundColor = tempColor;
+            optionThreeBtn.BackgroundColor = tempColor;
+            goToNextQuestion();
+            return;
+        }
+        if(await DisplayAlert("Wrong", "Your answer was wrong", "Try Again", "Skip to Next Question"))
+        {
+            return;
+        }
+        else
+        {          
+            goToNextQuestion();
+        }
+        return;
+    }
 }
