@@ -5,7 +5,7 @@
              Title="WrongQuestionPage">
     <VerticalStackLayout>
         <Label 
-            Text="Your nswer is wrong"
+            Text="Your answer is wrong"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
         <Button Text="Try Again" Clicked="trySameQuestionAgain" Margin="8"/>
