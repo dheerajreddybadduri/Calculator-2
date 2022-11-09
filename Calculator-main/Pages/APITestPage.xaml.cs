@@ -35,30 +35,6 @@ public partial class APITestPage : ContentPage
         correctOptionValue = questionData.correctOptionValue;
     }
 
-    private async void renderResults(String actualAns)
-    {
-        if(optionOneBtn.Text == actualAns)
-        {
-            optionOneBtn.BackgroundColor = Colors.Green;
-            optionTwoBtn.BackgroundColor = Colors.Red;
-            optionThreeBtn.BackgroundColor = Colors.Red;
-        }
-        if (optionTwoBtn.Text == actualAns)
-        {
-            optionTwoBtn.BackgroundColor = Colors.Green;
-            optionThreeBtn.BackgroundColor = Colors.Red;
-            optionOneBtn.BackgroundColor = Colors.Red;
-
-        }
-        if (optionThreeBtn.Text == actualAns)
-        {
-            optionThreeBtn.BackgroundColor = Colors.Green;
-            optionOneBtn.BackgroundColor = Colors.Red;
-            optionTwoBtn.BackgroundColor = Colors.Red;
-
-        }
-    }
-
     private async void onOptionClicked(object sender, EventArgs e)
     {
         Button button = (Button)sender;
